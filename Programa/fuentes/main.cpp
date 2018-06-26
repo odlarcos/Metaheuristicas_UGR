@@ -47,6 +47,184 @@ int main(int argc, char *argv[]){
   vector<int> sol;
   string archivo;
 
+  // Genético y memético
+  cout<<"AGG-Posicion: "<<endl;
+  for(int i=0; i<archivos.size(); i++){
+    archivo = archivos[i];
+
+    problema.load(ruta+archivo);
+
+    cruce = 0;
+    meme = 0;
+
+    t0 = clock();
+    solucion = problema.solucion_GeneticoAGG(seed, cruce, meme, 50);
+    t1 = clock();
+    time = (double(t1-t0)/CLOCKS_PER_SEC);
+
+    cout<<i<<"\t";
+    cout<<(solucion.second)<<"\t";
+    cout<<time<<"\t";
+
+    cout<<"Sol=";
+    for(int i=0; i<(solucion.first).size(); i++){
+      cout<<(solucion.first)[i]<<",";
+    }
+    cout<<endl;
+  }
+
+  cout<<"AGG-PMX: "<<endl;
+  for(int i=0; i<archivos.size(); i++){
+    archivo = archivos[i];
+
+    problema.load(ruta+archivo);
+
+    cruce = 1;
+    meme = 0;
+
+    t0 = clock();
+    solucion = problema.solucion_GeneticoAGG(seed, cruce, meme, 50);
+    t1 = clock();
+    time = (double(t1-t0)/CLOCKS_PER_SEC);
+
+    cout<<i<<"\t";
+    cout<<(solucion.second)<<"\t";
+    cout<<time<<"\t";
+
+    cout<<"Sol=";
+    for(int i=0; i<(solucion.first).size(); i++){
+      cout<<(solucion.first)[i]<<",";
+    }
+    cout<<endl;
+  }
+
+
+cout<<"AGE-Posicion: "<<endl;
+  for(int i=0; i<archivos.size(); i++){
+    archivo = archivos[i];
+
+    problema.load(ruta+archivo);
+
+    cruce = 0;
+    meme = 0;
+
+    t0 = clock();
+    solucion = problema.solucion_GeneticoAGE(seed, cruce, 50);
+    t1 = clock();
+    time = (double(t1-t0)/CLOCKS_PER_SEC);
+
+    cout<<i<<"\t";
+    cout<<(solucion.second)<<"\t";
+    cout<<time<<"\t";
+
+    cout<<"Sol=";
+    for(int i=0; i<(solucion.first).size(); i++){
+      cout<<(solucion.first)[i]<<",";
+    }
+    cout<<endl;
+  }
+
+  cout<<"\nAGE-PMX: "<<endl;
+  for(int i=0; i<archivos.size(); i++){
+    archivo = archivos[i];
+
+    problema.load(ruta+archivo);
+
+    cruce = 1;
+    meme = 0;
+
+    t0 = clock();
+    solucion = problema.solucion_GeneticoAGE(seed, cruce, 50);
+    t1 = clock();
+    time = (double(t1-t0)/CLOCKS_PER_SEC);
+
+    cout<<i<<"\t";
+    cout<<(solucion.second)<<"\t";
+    cout<<time<<"\t";
+
+    cout<<"Sol=";
+    for(int i=0; i<(solucion.first).size(); i++){
+      cout<<(solucion.first)[i]<<",";
+    }
+    cout<<endl;
+  }
+
+  cout<<"\nAM-PMX-1: "<<endl;
+  for(int i=0; i<archivos.size(); i++){
+    archivo = archivos[i];
+    //cout<<endl<<"Archivo: "<<archivo<<endl;
+    problema.load(ruta+archivo);
+
+    cruce = 1;
+    meme = 1;
+
+    t0 = clock();
+    solucion = problema.solucion_GeneticoAGG(seed, cruce, meme, 10);
+    t1 = clock();
+    time = (double(t1-t0)/CLOCKS_PER_SEC);
+
+    cout<<i<<"\t";
+    cout<<(solucion.second)<<"\t";
+    cout<<time<<"\t";
+
+    cout<<"Sol=";
+    for(int i=0; i<(solucion.first).size(); i++){
+      cout<<(solucion.first)[i]<<",";
+    }
+    cout<<endl;
+  }
+
+  cout<<"\nAM-PMX-2: "<<endl;
+  for(int i=0; i<archivos.size(); i++){
+    archivo = archivos[i];
+    //cout<<endl<<"Archivo: "<<archivo<<endl;
+    problema.load(ruta+archivo);
+
+    cruce = 1;
+    meme = 2;
+
+    t0 = clock();
+    solucion = problema.solucion_GeneticoAGG(seed, cruce, meme, 10);
+    t1 = clock();
+    time = (double(t1-t0)/CLOCKS_PER_SEC);
+
+    cout<<i<<"\t";
+    cout<<(solucion.second)<<"\t";
+    cout<<time<<"\t";
+
+    cout<<"Sol=";
+    for(int i=0; i<(solucion.first).size(); i++){
+      cout<<(solucion.first)[i]<<",";
+    }
+    cout<<endl;
+  }
+
+  cout<<"\nAM-PMX-3: "<<endl;
+  for(int i=0; i<archivos.size(); i++){
+    archivo = archivos[i];
+    problema.load(ruta+archivo);
+
+    cruce = 1;
+    meme = 3;
+
+    t0 = clock();
+    solucion = problema.solucion_GeneticoAGG(seed, cruce, meme, 10);
+    t1 = clock();
+    time = (double(t1-t0)/CLOCKS_PER_SEC);
+
+    cout<<i<<"\t";
+    cout<<(solucion.second)<<"\t";
+    cout<<time<<"\t";
+
+    cout<<"Sol=";
+    for(int i=0; i<(solucion.first).size(); i++){
+      cout<<(solucion.first)[i]<<",";
+    }
+    cout<<endl;
+  }
+
+  // Basados en Trayectorias
+  
   cout<<"\nES: "<<endl;
   for(int i=0; i<archivos.size(); i++){
     archivo = archivos[i];
