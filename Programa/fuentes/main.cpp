@@ -16,6 +16,7 @@ int main(int argc, char *argv[]){
   QAP problema;
   string ruta = "./Instancias_QAP/";
   int seed = 0;
+  int cruce, meme;
 
   // Fijar semilla
   if(argc == 2)
@@ -224,7 +225,7 @@ cout<<"AGE-Posicion: "<<endl;
   }
 
   // Basados en Trayectorias
-  
+
   cout<<"\nES: "<<endl;
   for(int i=0; i<archivos.size(); i++){
     archivo = archivos[i];
