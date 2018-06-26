@@ -1,1 +1,0 @@
-# Metaheuristicas_UGR
